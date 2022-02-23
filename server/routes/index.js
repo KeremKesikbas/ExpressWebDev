@@ -1,15 +1,16 @@
 var express = require("express");
-var path = require("path");
 
 var db = require("../../lib/database");
     
 var router = express.Router();
 
-path = "path/to/.sqlite";
+db_path = __dirname + "\\..\\database.db";
+
+console.log(db_path);
 
 router.get("/", function(req, res) {
 
-    db.connect(path);
+    db.connect(db_path);
 
     res.end();
 });
