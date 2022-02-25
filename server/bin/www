@@ -8,6 +8,11 @@ var app = require('../app');
 var debug = require('debug')('app:server');
 var http = require('http');
 
+var db = require("../../lib/database");
+db_path = __dirname + "\\..\\database.db";
+
+db.connect(db_path);
+
 /**
  * Get port from environment and store in Express.
  */
@@ -25,7 +30,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-const ip = "192.168.1.25"; // ipv4
+const ip = "192.168.1.28"; // ipv4
 
 server.listen(port, ip);
 server.on('error', onError);

@@ -1,18 +1,12 @@
 var express = require("express");
+var path = require("path");
 
-var db = require("../../lib/database");
-    
 var router = express.Router();
 
-db_path = __dirname + "\\..\\database.db";
-
-console.log(db_path);
+html_path = path.join(__dirname + "/../../resources/");
 
 router.get("/", function(req, res) {
-
-    db.connect(db_path);
-
-    res.end();
+    res.sendFile(path.join(html_path + "index.html"));
 });
 
 module.exports = router;
