@@ -10,7 +10,9 @@ var http = require('http');
 
 var db = require("../../lib/database").database;
 
-db.createTemplate("");
+db.setTable("users");
+
+db.createTemplate(["username", "password", "mail"]);
 
 /**
  * Get port from environment and store in Express.

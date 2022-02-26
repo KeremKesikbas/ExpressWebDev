@@ -3,5 +3,5 @@
     "mysql_password": "123456",
     "mysql_host": "localhost",
     "mysql_database": "main",
-    "use_mysql": "false"
+    "use_mysql": "true"
 }
