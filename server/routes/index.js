@@ -1,10 +1,13 @@
-var express = require("express");
-var path = require("path");
+module.exports = function(app) {
+    var router = require("express").Router();
+    var bp = require("body-parser");
 
-var router = express.Router();
+    var mainPageURL = "/login-signup"
 
-router.get("/", function(req, res) {
-    res.render("login");
-});
+    router.get("/", bp.urlencoded({ extended: false }), function(req, res) {
+        res.redirect(mainPageURL);
+    });
 
-module.exports = router;
+    app.use("/", router);
+    app.use("/login-signup", require("./login-signup"));
+}
