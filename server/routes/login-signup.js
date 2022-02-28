@@ -12,7 +12,7 @@ router.post("/", bp.json(), function(req, res) {
         var data = JSON.parse(JSON.stringify(req.body));
 
         if (data["email"]) {
-            db.insertItemT([data["username"], data["password"], data["email"]]);
+            console.log([data["username"] + " " + data["password"] + " " + data["email"]]);
         }
     }
 });
