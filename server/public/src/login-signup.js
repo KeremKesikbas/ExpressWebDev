@@ -43,13 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        sendJson("/login-signup", {username: loginUsername, password: loginPassword});
+        sendJSON("/login-signup", {username: loginUsername, password: loginPassword});
+
+        $.getJSON("/login-signup", function(result) {
+            $.each(result, function(i, field) {
+                setFormMessage(loginForm, "error", i);
+            });
+        });
     });
 
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        sendJson("/login-signup", {
+        sendJSON("/login-signup", {
             username: signupUsername, 
             password: signupPassword,
             confirmPassword: signupCPassword,

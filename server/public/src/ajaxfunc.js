@@ -21,7 +21,7 @@ function sendText(url, type, varName, text) {
  * @param {string} url URL to send
  * @param {*} json Data to send
  */
-function sendJson(url, json) {
+function sendJSON(url, json) {
     $.ajax({
         url: url,
         type: "POST",

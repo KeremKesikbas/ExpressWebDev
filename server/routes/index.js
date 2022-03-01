@@ -10,5 +10,11 @@ module.exports = function(app) {
 
     app.use("/", router);
     app.use("/login-signup", require("./login-signup"));
-    app.use("/home", require("./homePage"));
+    app.use("/home", require("./home"));
+    app.use("/foundations", require("./foundations"));
+    app.use("/events", require("./events"));
+    app.use("/contact", require("./contact"));
+    app.use("/career", require("./career"));
+    app.use("/announcements", require("./announcements"));
+    app.use("/aboutUs", require("./aboutUs"));
 }
