@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var signupPassword = "";
     var signupCPassword = "";
 
+    var lang = document.getElementById("lang").dataset.lang;
+
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
         loginForm.classList.add("form--hidden");
@@ -43,12 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        sendJSON("/login-signup", {username: loginUsername, password: loginPassword});
+        sendJSON("/login-signup/json", {username: loginUsername, password: loginPassword});
 
-        $.getJSON("/login-signup", function(result) {
-            $.each(result, function(i, field) {
-                setFormMessage(loginForm, "error", i);
-            });
+        $.getJSON("/login-signup/json", function(result) {
+            
         });
     });
 

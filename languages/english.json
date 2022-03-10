@@ -1,0 +1,12 @@
+{
+    "language_code": "en",
+    "login": "Login",
+    "username_or_email": "Username or Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "username": "Username",
+    "email": "Email",
+    "_continue": "Continue",
+    "forgot_password": "Forgot Password?",
+    "create_account": "Create Account"
+}

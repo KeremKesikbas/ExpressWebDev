@@ -1,0 +1,12 @@
+{
+    "language_code": "tr",
+    "login": "Giriş Yap",
+    "username_or_email": "Kullanıcı adı veya Email",
+    "password": "Şifre",
+    "confirm_password": "Şifreyi Onayla",
+    "username": "Kullanıcı adı",
+    "email": "Email",
+    "_continue": "Devam Et",
+    "forgot_password": "Şifrenizi mi Unuttunuz?",
+    "create_account": "Hesap Açın"
+}

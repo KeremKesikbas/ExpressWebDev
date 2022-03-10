@@ -35,7 +35,7 @@ var server = http.createServer(app);
   var interfaces = require('os').networkInterfaces();
 
   for (var devName in interfaces) {
-    if (devName == "Wi-Fi") {
+    if (devName == "Wi-Fi" || devName == "Ethernet") {
       var iface = interfaces[devName];
 
       for (var i = 0; i < iface.length; i++) {
