@@ -3,31 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
     var searchText = "";
 
     $(document).on("click", "#loginButton", function() {
-        changeURL("/home", "/login-signup");
+        changeURL("/login-signup");
     });
 
     $(document).on("click", "#foundationsTab", function() {
-        changeURL("/home", "/foundations");
+        changeURL("/foundations");
     });
 
     $(document).on("click", "#eventsTab", function() {
-        changeURL("/home", "/events");
+        changeURL("/events");
     });
 
     $(document).on("click", "#contactTab", function() {
-        changeURL("/home", "/contact");
+        changeURL("/contact");
     });
 
     $(document).on("click", "#careerTab", function() {
-        changeURL("/home", "/career");
+        changeURL("/career");
     });
 
     $(document).on("click", "#announcementsTab", function() {
-        changeURL("/home", "/announcements");
+        changeURL("/announcements");
     });
 
     $(document).on("click", "#aboutUsTab", function() {
-        changeURL("/home", "/aboutUs");
+        changeURL("/aboutUs");
     });
 
     $(document).on("click", "#searchButton", function() {

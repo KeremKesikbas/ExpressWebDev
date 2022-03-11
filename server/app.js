@@ -3,11 +3,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var bp = require("body-parser");
+const requestIp = require("request-ip");
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(bp.urlencoded({ extended: true }));
+app.use(bp.json());
+
+app.use(requestIp.mw())
 
 app.use(logger('dev'));
 app.use(cookieParser());

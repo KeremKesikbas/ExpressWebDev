@@ -1,0 +1,14 @@
+{
+    "language_code": "de",
+    "login": "Anmelden",
+    "username_or_email": "Benutzername oder E-Mail-Adresse",
+    "password": "Passwort",
+    "confirm_password": "Bestätige das Passwort",
+    "username": "Nutzername",
+    "email": "Email",
+    "_continue": "Fortsetzen",
+    "forgot_password": "Passwort vergessen?",
+    "create_account": "Benutzerkonto erstellen",
+    "not_match": "Dieser Bereich muss gleich mit Passwort sein",
+    "empty_area": "Dieser Bereich ist erforderlich"
+}

@@ -8,5 +8,7 @@
     "email": "Email",
     "_continue": "Devam Et",
     "forgot_password": "Şifrenizi mi Unuttunuz?",
-    "create_account": "Hesap Açın"
+    "create_account": "Hesap Açın",
+    "not_match": "Bu alan şifre ile aynı olmalı",
+    "empty_area": "Bu alan boş bırakılamaz"
 }

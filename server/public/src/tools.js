@@ -15,18 +15,9 @@ function sendJSON(url, json) {
 }
 
 /**
- * Changes url in client when ajax sended data successly.
- * Sends new url to the server as a string variable called "newURL".
- * @param {string} oldURL 
- * @param {string} newURL
+ * @param {string} url
  */
-function changeURL(oldURL, newURL) {
-    $.ajax({
-        url: oldURL,
-        type: "GET",
-        data: "newURL=" + newURL,
-        dataType: "text"
-    }).done(function() {
-        window.location.href = newURL;
-    });
+function changeURL(url) {
+    old_url = new URL(window.location.href);
+    window.location.href = url + old_url.search;
 }
