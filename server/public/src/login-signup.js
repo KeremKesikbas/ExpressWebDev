@@ -29,8 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     var signupCPassword = "";
 
     var lang = document.getElementById("lang").dataset.lang;
+
     var not_match = document.getElementById("not_match").dataset.not_match;
     var empty_area = document.getElementById("empty_area").dataset.empty_area;
+    var username_exist = document.getElementById("username_exist").dataset.username_exist;
+    var email_exist = document.getElementById("email_exist").dataset.email_exist;
+    var login_not_match = document.getElementById("login_not_match").dataset.login_not_match;
 
     var checkLoginData = [false, false];
     var checkSignupData = [false, false, false, false];
@@ -59,8 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (sendable) {
-            sendJSON("/login-signup/json", {type: "login", username: loginUsername, password: loginPassword});
+            sendJSON("/login-signup/cp", {type: "login", username: loginUsername, password: loginPassword});
         }
+
+        $.getJSON("/login-signup/cg", function(data) {
+            if (data["event"] == "login_not_match") {
+                setFormMessage(loginForm, "error", login_not_match);
+            }
+        });
     });
 
     createAccountForm.addEventListener("submit", e => {
@@ -75,13 +85,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if(sendable) {
-            sendJSON("/login-signup/json", {
+            sendJSON("/login-signup/cp", {
                 type: "signup",
                 username: signupUsername, 
                 password: signupPassword,
                 confirmPassword: signupCPassword,
                 email: signupEmail});
         }
+
+
+        $.getJSON("/login-signup/cg", function(data) {
+            if (data["event"] == "username_exist") {
+                setFormMessage(createAccountForm, "error", username_exist);
+            }
+
+            else if (data["event"] == "email_exist") {
+                setFormMessage(createAccountForm, "error", email_exist);
+            }
+        });
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {

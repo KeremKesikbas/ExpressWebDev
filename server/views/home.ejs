@@ -5,15 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity=
+"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    
     <title>Alkev HUB</title>
+    <style>
+
+
+    </style>
+
   </head>
   <body>
-      
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+   
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+          <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
             <a class="navbar-brand" href="#">
                <img src="images/logos/logo3.png" width="50" height="50" alt=""> ALKEV</a>
@@ -78,9 +89,113 @@
             </div>
 
         </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      </div>
+      <div class="container">
+      
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">      
+          <img  id="image_map"  src="images/map/germany.png" usemap="#image-map">
+          
 
-    <script src="/src/tools.js"></script>
-    <script src="/src/home.js"></script>
+          <map id ="germany"  name="image-map">
+            <area type="button" data-toggle="modal" data-target="#StateModal" target="" alt="Bayern" title="Bayern" href="" coords="141,305,146,309,154,313,157,322,164,323,161,333,
+			167,338,169,345,176,353,175,364,173,371,169,378,161,381,162,387,167,394,168,403,166,412,167,420,167,428,159,
+			428,152,433,149,440,159,443,166,441,172,448,179,441,182,432,187,434,201,438,205,443,211,441,223,435,229,431,
+			237,430,249,427,249,419,259,422,270,424,280,429,285,425,280,414,278,405,271,398,280,384,292,379,291,370,297,
+			369,306,368,308,357,305,346,298,342,283,332,263,320,248,300,248,286,238,275,227,266,219,262,207,264,203,258,
+			197,267,188,267,183,275,176,270,169,263,159,258,153,264,146,268,140,276,139,287,128,282,119,286,121,299,122,308,122,318,130,314,133,304" shape="poly">
+
+          </map>
+
+        </div>
+      </div>
+
+
+      <div class="container">
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" >
+
+
+    
+      <!-- Modal -->
+      <div class="modal fade"
+          id="StateModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="StateModalLabel"
+          aria-hidden="false">
+           
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+               
+                  <!-- Add image inside the body of modal -->
+                  <div class="modal-body">
+                  	<h1 id="StateModalTitle">State_name</h1>
+                      <img id="StateModalImage" src="State_image_path"
+                          alt="Click on button" />
+                          <p id="StateModalInfo">State_info</p>
+                          <table id="StateModalTable"></table>
+                  </div>
+   
+                  <div class="modal-footer">
+                      <button type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal">
+                          Close
+                  </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+        </div>
+      </div>
+
+
+
+      
+          
+   
+         
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity=
+"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+</script>
+<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity=
+"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous">
+</script>  
+
+<script src="src/home.js"></script>
+<script src="src/tools.js"></script>
   </body>
 </html>

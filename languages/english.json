@@ -10,5 +10,8 @@
     "forgot_password": "Forgot Password?",
     "create_account": "Create Account",
     "not_match": "This area must be the same with password",
-    "empty_area": "This area is required"
+    "empty_area": "This area is required",
+    "username_exist": "This username is exist, please choose another one",
+    "email_exist": "This email is exist, please choose another one",
+    "login_not_match": "Invalid username or password"
 }

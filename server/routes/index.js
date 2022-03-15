@@ -1,6 +1,8 @@
 const ll = require("../../lib/LangLoader");
 const cm = require("../../lib/Clients");
 
+var db = require("../../lib/Database");
+
 module.exports = function(app) {
     var router = require("express").Router();
 

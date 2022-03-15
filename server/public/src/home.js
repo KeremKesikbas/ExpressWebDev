@@ -61,4 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		})
     });
+
+    var map = document.getElementById("germany");
+
+    map.addEventListener("click", function(data) {
+        var title = data.target.title;
+
+        sendJSON("/home/cp", {state: title});
+
+        $.getJSON("/home/cg", function(data) {
+            document.getElementById("StateModalTitle").textContent = data["name"];
+            document.getElementById("StateModalInfo").textContent = data["info"];
+            document.getElementById("StateModalImage").src = "images/map/" + data["name"] + ".png";
+
+            var uns = data["universities"];
+
+            for (var i = 0; i < uns.length; i++) {
+                var e = document.createElement("td");
+
+                e.textContent = uns[i]["name"];
+
+                document.getElementById("StateModalTable").appendChild(e);
+            }
+        });
+    });
 });

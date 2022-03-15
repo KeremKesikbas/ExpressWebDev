@@ -5,7 +5,9 @@ var db = require("../../lib/database");
 
 var langLoader = require("../../lib/LangLoader");
 
-var userData = {};
+var userData = {event: ""};
+
+db.createTemplate("users", ["username", "password", "mail"]);
 
 router.get("/", function(req, res) {
     try { 
@@ -21,9 +23,11 @@ router.get("/", function(req, res) {
     }
 });
 
-router.post("/json", function(req, res, next) {
+router.post("/cp", function(req, res, next) {
     try {
         if (req.body) {
+            db.useTable("users");
+
             var data = JSON.parse(JSON.stringify(req.body));
             
             var control = true;
@@ -43,18 +47,24 @@ router.post("/json", function(req, res, next) {
                     db.selectItem("username", data["username"], function(err, rows) {
                         if (rows) {
                             control = false;
+
+                            userData = {event: "username_exist"};
                         }
                     });
 
                     db.selectItem("email", data["email"], function(err, rows) {
                         if (rows) {
                             control = false;
+
+                            userData = {event: "email_exist"};
                         }
                     });
                 }
 
                 if (control) {
                     db.insertItemT([data["username"], data["password"], data["email"]]);
+
+                    userData = {event: "signup_succes"};
                 }
             }
 
@@ -68,42 +78,40 @@ router.post("/json", function(req, res, next) {
                 if (control) {
 
                     db.selectItem("username", data["username"], function(err, rows) {
-                        if (rows) {
-                            control = true;
-                        }
-
-                        else {
+                        if (!rows) {
                             db.selectItem("email", data["username"], function(err, rows) {
-                                if (rows) {
-                                    control = true;
+                                if (!rows) {
+                                    control = false;
+
+                                    userData = {event: "login_not_match"};
                                 }
                             });
                         }
                     });
 
                     db.selectItem("password", data["password"], function(err, rows) {
-                        if (rows) {
-                            control = true;
+                        if (!rows) {
+                            control = false;
+
+                            userData = {event: "login_not_match"};
                         }
                     });
                 }
 
                 if (control) {
-                    console.log("loggined");
+                    userData = {event: "login_succes"};
                 }
             }
         }
 
-        next();
-
     } catch (error) {
         if (error) console.log(error);
-        
+
         res.end();
     }
 });
 
-router.all("/json", function(req, res) {
+router.get("/cg", function(req, res) {
     try {
         res.json(userData);
     } catch (error) {

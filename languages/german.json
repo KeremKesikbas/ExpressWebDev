@@ -10,5 +10,8 @@
     "forgot_password": "Passwort vergessen?",
     "create_account": "Benutzerkonto erstellen",
     "not_match": "Dieser Bereich muss gleich mit Passwort sein",
-    "empty_area": "Dieser Bereich ist erforderlich"
+    "empty_area": "Dieser Bereich ist erforderlich",
+    "username_exist": "Dieser Benutzername existiert, bitte wählen Sie einen anderen",
+    "email_exist": "Diese E-Mail existiert, bitte wählen Sie eine andere aus",
+    "login_not_match": "Ungültiger Benutzername oder Passwort"
 }

@@ -10,5 +10,8 @@
     "forgot_password": "Şifrenizi mi Unuttunuz?",
     "create_account": "Hesap Açın",
     "not_match": "Bu alan şifre ile aynı olmalı",
-    "empty_area": "Bu alan boş bırakılamaz"
+    "empty_area": "Bu alan boş bırakılamaz",
+    "username_exist": "Bu kullanıcı adı kullanımda, lütfen farklı bir kullanıcı adı seçin",
+    "email_exist": "Bu e-posta adresi adı kullanımda, lütfen farklı bir kullanıcı adı seçin",
+    "login_not_match": "Geçersiz kullanıcı adı veya şifre"
 }
